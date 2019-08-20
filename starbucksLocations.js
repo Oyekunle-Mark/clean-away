@@ -24,21 +24,23 @@ async function readAndWriteLines() {
   let position = 0;
 
   for await (const line of rl) {
-    if (!position) continue;
-  
-    const lineArr = line.split(',');
-    const imgNumber = Math.floor(Math.random() * 10);
+    if (position !== 0) {
+      const lineArr = line.split(',');
+      const imgNumber = Math.floor(Math.random() * 10);
 
-    starbucksLocations.push({
-      name: lineArr[2].replace(/"/g, ''),
-      description: 'A Starbucks shop to work out from',
-      image_url: images[imgNumber],
-      address: `${lineArr[4]}, ${lineArr[5]}, ${lineArr[6]}, ${lineArr[7]}`
-        .replace(/"/g, '')
-        .replace(/\s+/g, ' '),
-      latitude: lineArr[lineArr.length - 1],
-      longitude: lineArr[lineArr.length - 2],
-    });
+      starbucksLocations.push({
+        name: lineArr[2].replace(/"/g, ''),
+        description: 'A Starbucks shop to work out from',
+        image_url: images[imgNumber],
+        address: `${lineArr[4]}, ${lineArr[5]}, ${lineArr[6]}, ${lineArr[7]}`
+          .replace(/"/g, '')
+          .replace(/\s+/g, ' '),
+        latitude: lineArr[lineArr.length - 1],
+        longitude: lineArr[lineArr.length - 2],
+      });
+    }
+
+    position += 1;
   }
 
   fs.writeFile(
