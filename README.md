@@ -15,6 +15,8 @@ The starbucksLocations.js should create an array of object of this format
       }
 ```
 
+The script writes the output of the script to the `starbucks.js` file in the js folder.
+
 ## Author
 
 Oyekunle Oloyede
