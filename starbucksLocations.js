@@ -27,7 +27,7 @@ async function readAndWriteLines() {
     const imgNumber = Math.floor(Math.random() * 10);
 
     starbucksLocations.push({
-      name: lineArr[2],
+      name: lineArr[2].replace(/"/g, ''),
       description: 'A Starbucks shop to work out from',
       image_url: images[imgNumber],
       address: `${lineArr[4]}, ${lineArr[5]}, ${lineArr[6]}, ${lineArr[7]}`
@@ -38,7 +38,18 @@ async function readAndWriteLines() {
     });
   }
 
-  console.log(starbucksLocations);
+  fs.writeFile(
+    './js/starbucks.js',
+    JSON.stringify(starbucksLocations, null, 2),
+    'utf-8',
+    function(err) {
+      if (err) {
+        return console.log(err);
+      }
+
+      console.log('The file was saved!');
+    },
+  );
 }
 
 readAndWriteLines();
