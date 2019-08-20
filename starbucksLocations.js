@@ -8,7 +8,7 @@ const rl = readline.createInterface({
 
 const starbucksLocations = [];
 
-const imgaes = [
+const images = [
   'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiLqR1M8Oq2awl4d6DrzDOeN90CZCIHZA6M5YI6GIg77mQgH4AwQ',
   'https://purewows3.imgix.net/images/articles/2017_01/bespoke_coworking_spaces_san_francisco.png?auto=format,compress&cs=strip',
   'https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fblogs-images.forbes.com%2Feustaciahuen%2Ffiles%2F2017%2F03%2FNeuehouse-3-1200x675.jpg',
@@ -23,13 +23,15 @@ const imgaes = [
 
 rl.on('line', line => {
   const lineArr = line.split(',');
+  const imgNumber = Math.floor(Math.random() * 10);
+
   const starbucksObj = {
     name: lineArr[2],
     description: 'A Starbucks shop to work out from',
-    image_url: 'https://image.flaticon.com/icons/svg/201/201559.svg',
-    address: `${lineArr[4]}, ${lineArr[5]}, ${lineArr[6]}, ${
-      lineArr[7]
-    }`.replace(/"/g, ''),
+    image_url: images[imgNumber],
+    address: `${lineArr[4]}, ${lineArr[5]}, ${lineArr[6]}, ${lineArr[7]}`
+      .replace(/"/g, '')
+      .replace(/\s+/g, ' '),
     latitude: lineArr[lineArr.length - 2],
     longitude: lineArr[lineArr.length - 1],
   };
