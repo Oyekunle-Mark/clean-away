@@ -21,8 +21,11 @@ async function readAndWriteLines() {
   ];
 
   const starbucksLocations = [];
+  let position = 0;
 
   for await (const line of rl) {
+    if (!position) continue;
+  
     const lineArr = line.split(',');
     const imgNumber = Math.floor(Math.random() * 10);
 
