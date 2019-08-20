@@ -2,7 +2,7 @@
 
 Uses the node.js file management system to clean a csv file.
 
-The starbuckLocations.js should create an array of object of this format
+The starbucksLocations.js should create an array of object of this format
 
 ```javascript
   {
