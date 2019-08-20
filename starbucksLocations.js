@@ -32,8 +32,8 @@ rl.on('line', line => {
     address: `${lineArr[4]}, ${lineArr[5]}, ${lineArr[6]}, ${lineArr[7]}`
       .replace(/"/g, '')
       .replace(/\s+/g, ' '),
-    latitude: lineArr[lineArr.length - 2],
-    longitude: lineArr[lineArr.length - 1],
+    latitude: lineArr[lineArr.length - 1],
+    longitude: lineArr[lineArr.length - 2],
   };
 
   console.log(starbucksObj);
