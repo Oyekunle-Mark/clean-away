@@ -52,7 +52,7 @@ async function readAndWriteLines() {
         return console.log(err);
       }
 
-      console.log('The file was saved!');
+      console.log('The file is saved and ready for action!');
     },
   );
 }
