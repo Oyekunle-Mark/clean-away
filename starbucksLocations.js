@@ -21,20 +21,24 @@ const images = [
   'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbifgcp_29eEnE5BozbdrZweuFHtvN-sJRsooOtmBrDAQqHSDW',
 ];
 
-rl.on('line', line => {
-  const lineArr = line.split(',');
-  const imgNumber = Math.floor(Math.random() * 10);
+async function readAndWriteLines() {
+  for await (const line of rl) {
+    const lineArr = line.split(',');
+    const imgNumber = Math.floor(Math.random() * 10);
 
-  const starbucksObj = {
-    name: lineArr[2],
-    description: 'A Starbucks shop to work out from',
-    image_url: images[imgNumber],
-    address: `${lineArr[4]}, ${lineArr[5]}, ${lineArr[6]}, ${lineArr[7]}`
-      .replace(/"/g, '')
-      .replace(/\s+/g, ' '),
-    latitude: lineArr[lineArr.length - 1],
-    longitude: lineArr[lineArr.length - 2],
-  };
+    starbucksLocations.push({
+      name: lineArr[2],
+      description: 'A Starbucks shop to work out from',
+      image_url: images[imgNumber],
+      address: `${lineArr[4]}, ${lineArr[5]}, ${lineArr[6]}, ${lineArr[7]}`
+        .replace(/"/g, '')
+        .replace(/\s+/g, ' '),
+      latitude: lineArr[lineArr.length - 1],
+      longitude: lineArr[lineArr.length - 2],
+    });
+  }
 
-  console.log(starbucksObj);
-});
+  console.log(starbucksLocations);
+}
+
+readAndWriteLines();
