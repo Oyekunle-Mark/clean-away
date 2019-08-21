@@ -24,7 +24,7 @@ async function readAndWriteLines() {
   let position = 0;
 
   for await (const line of rl) {
-    if (position !== 0) {
+    if (position !== 0 && position % 5 === 0) {
       const lineArr = line.split(',');
       const imgNumber = Math.floor(Math.random() * 10);
 
@@ -44,7 +44,7 @@ async function readAndWriteLines() {
   }
 
   fs.writeFile(
-    './js/starbucks.js',
+    './js/starbucks2.js',
     JSON.stringify(starbucksLocations, null, 2),
     'utf-8',
     function(err) {
