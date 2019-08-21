@@ -24,7 +24,7 @@ async function readAndWriteLines() {
   let position = 0;
 
   for await (const line of rl) {
-    if (position !== 0 && position % 5 === 0) {
+    if (position !== 0 && position % 5 === 0 && position <= 25000) {
       const lineArr = line.split(',');
       const imgNumber = Math.floor(Math.random() * 10);
 
