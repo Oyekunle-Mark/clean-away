@@ -19,7 +19,7 @@ The script writes the output of the script to the `starbucks.js` file in the js 
 
 The starbucksLocations2.js works the same way as the starbucksLocations.js script but selects on every fifth row.
 
-The script writes the output of the script to the `starbucks2.js` file in the js folder.
+The script writes the output the array of 5000 objects to the `starbucks2.js` file in the js folder.
 
 ## Author
 
