@@ -21,7 +21,7 @@ The starbucksLocations2.js works the same way as the starbucksLocations.js scrip
 
 The script writes the output the array of 5000 objects to the `starbucks2.js` file in the js folder.
 
-The third script is the `reviews.js`. It generates reviews using random data. This is the format of the script:
+The third script is the `reviewsRandom.js`. It generates reviews using random data. This is the format of the script:
 
 ```javascript
 {
