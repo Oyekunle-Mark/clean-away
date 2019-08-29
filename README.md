@@ -36,6 +36,8 @@ The third script is the `reviewsRandom.js`. It generates reviews using random da
   }
 ```
 
+Another file, `local.js` converts a javascript object to JSON and writes the output to a file.
+
 ## Author
 
 Oyekunle Oloyede
