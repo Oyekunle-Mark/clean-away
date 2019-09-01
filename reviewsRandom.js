@@ -2,6 +2,7 @@ const fs = require('fs');
 
 const reviews = [];
 
+// random descriptions
 const descriptions = [
   'This is such a wonderful place to work out of. The environment is quite serene and I enjoyed every minute I spent there. I will be back for sure.',
   "A few things could have gone better. There were disturbances during work and I really couldn't achieve much. Wifi was great though.",
@@ -35,6 +36,7 @@ for (let i = 1; i <= 5000; i++) {
   }
 }
 
+// writes the output to a file
 fs.writeFile(
   './js/reviews.js',
   JSON.stringify(reviews, null, 2),
