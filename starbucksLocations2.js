@@ -6,6 +6,10 @@ const rl = readline.createInterface({
   crlfDelay: Infinity,
 });
 
+/**
+ * Converts and cleans the csv file to a JSON one and writes the out put to a file
+ * Produces five thousand results by selecting every fifth item between 1 and 25000
+ */
 async function readAndWriteLines() {
   const images = [
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiLqR1M8Oq2awl4d6DrzDOeN90CZCIHZA6M5YI6GIg77mQgH4AwQ',
