@@ -5,7 +5,9 @@ const rl = readline.createInterface({
   input: fs.createReadStream('./csv/starbucks.csv'),
   crlfDelay: Infinity,
 });
-
+/**
+ * Converts and cleans the csv file to a JSON one and writes the out put to a file
+ */
 async function readAndWriteLines() {
   const images = [
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiLqR1M8Oq2awl4d6DrzDOeN90CZCIHZA6M5YI6GIg77mQgH4AwQ',
