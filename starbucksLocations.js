@@ -5,6 +5,7 @@ const rl = readline.createInterface({
   input: fs.createReadStream('./csv/starbucks.csv'),
   crlfDelay: Infinity,
 });
+
 /**
  * Converts and cleans the csv file to a JSON one and writes the out put to a file
  */
